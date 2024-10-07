@@ -23,189 +23,304 @@
         <div class="reveal">
             <div class="slides">
                 <section>
-                    <h1>Beautiful presentations</h1>
-                    <h2>New features</h2>
-                    <ul>
-                        <li>Nerd icons </li>
-                        <li>
-                            <code class="js">
-                                (inline) => code("highlighting")
-                            </code>
-                        </li>
-                        <li>Automatic QR Code generation</li>
-                        <li>and much more!</li>
-                    </ul>
-                </section>
-                <section>
-                    <h1>CUSTOM TOKYONIGHT THEME</h1>
-                    <h2 class="fragment">THAT HAS</h2>
-                    <h3 class="fragment">MULTI</h3>
-                    <h4 class="fragment">LEVEL</h4>
-                    <h5 class="fragment">HEADING</h5>
-                    <h6 class="fragment">COLORS</h6>
-                    <h6>
-                        Thanks to this project
-                        <a
-                            href="https://github.com/tcmmichaelb139/obsidian-tokyonight">
-                            
-                        </a>
-                        for the colorscheme!
-                    </h6>
+                    <h1>Композиция</h1>
+                    <img
+                        data-type="qrcode"
+                        class="r-stretch"
+                        alt="https://ktkv-presentations.github.io/algos-16/" />
                 </section>
                 <section>
                     <section>
-                        <h1>Tailwind CSS</h1>
-                        <div class="grid grid-cols-2 gap-8">
-                            <div>
-                                <h5>Lorem, ipsum.</h5>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Error quod fugiat harum
-                                    modi laboriosam dignissimos, maxime
-                                    possimus? Error, nihil in.
-                                </p>
-                            </div>
-                            <div>
-                                <h5>Lorem, ipsum.</h5>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Error quod fugiat harum
-                                    modi laboriosam dignissimos, maxime
-                                    possimus? Error, nihil in.
-                                </p>
-                            </div>
-                            <div class="col-span-2">
-                                <h5>Lorem, ipsum.</h5>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Error quod fugiat harum
-                                    modi laboriosam dignissimos, maxime
-                                    possimus? Error, nihil in.
-                                </p>
-                            </div>
-                        </div>
-                    </section>
-                    <section>
-                        <h1>Custom classes</h1>
-                        <div class="grid grid-cols-3 gap-8">
-                            <div class="border-r">
-                                <h5>border-r</h5>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur
-                                    adipisicing elit. Illum, soluta!
-                                </p>
-                            </div>
-                            <div class="border-o">
-                                <h5>border-o</h5>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur
-                                    adipisicing elit. Illum, soluta!
-                                </p>
-                            </div>
-                            <div class="border-y">
-                                <h5>border-y</h5>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur
-                                    adipisicing elit. Illum, soluta!
-                                </p>
-                            </div>
-                        </div>
-                    </section>
-                </section>
-                <section>
-                    <section data-auto-animate>
-                        <h1>New code highlighting!</h1>
-                        <div>
-                            Now also has Tokyo Night
-                            <code>highlight.js</code>
-                            highlighting implementation
-                        </div>
-                        <pre><code data-trim data-noescape>
-var foo = {
-    bar: function () {
-             alert("Hello, World!");
-         }
-};	
-					</code></pre>
-                    </section>
-                    <section data-auto-animate>
-                        <h1>New code highlighting!</h1>
-                        <h5>Inline code highlighting is now also supported!</h5>
+                        <h1>Композиция</h1>
                         <p>
-                            Just wrap your code with
-                            <code>&lt;code&gt;</code>
-                            tag and get highlighting like this
-                            <code class="js">
-                                const foo = () => {return bar}
-                            </code>
-                            !
+                            принцип объектно-ориентированного программирования
+                            (ООП), позволяющий создавать сложные объекты из
+                            более простых, используя объекты других классов в
+                            качестве полей
+                        </p>
+                        <div class="border-b">
+                            <h4>Пример</h4>
+                            класс «Машина» может содержать объекты класса
+                            «Двигатель» или «Колесо», что отражает реальное
+                            представление о том, как машина состоит из отдельных
+                            компонентов.
+                        </div>
+                    </section>
+                    <section>
+                        <h1>Композиция и наследование</h1>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="border-b">
+                                <h4>Наследование</h4>
+                                <p>
+                                    отношение «is-a» (является), при котором
+                                    класс-наследник является расширением или
+                                    специализацией родительского класса
+                                </p>
+                            </div>
+                            <div class="border-b">
+                                <h4>Композиция</h4>
+                                <p>
+                                    отношение «has-a» (содержит), когда один
+                                    класс включает в себя объекты других классов
+                                    как свои компоненты
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h1>Пример композиции</h1>
+                        <pre class="r-stretch"><code class="python">
+class Address:
+    def __init__(self, city, street):
+        self.city = city
+        self.street = street
+
+    def __str__(self):
+        return f'{self.street}, {self.city}'
+
+class Person:
+    def __init__(self, name, address):
+        self.name = name
+        self.address = address
+
+    def __str__(self):
+        return f'{self.name} lives at {self.address}'
+
+# Создаем объект адреса
+address = Address('Moscow', 'Tverskaya')
+
+# Создаем объект человека, передав объект адреса
+person = Person('John', address)
+
+print(person)
+                        </code></pre>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Композиция в Python</h1>
+                        <p>
+                            реализуется за счет того, что внутри одного класса
+                            создаются объекты других классов
                         </p>
                     </section>
+                    <section>
+                        <pre class="r-stretch"><code class="python">
+# Класс для описания двигателя
+class Engine:
+    def __init__(self, power, fuel_type):
+        self.power = power
+        self.fuel_type = fuel_type
+
+    def start(self):
+        return f'Engine with {self.power} HP running on {self.fuel_type} started.'
+
+# Класс для описания машины
+class Car:
+    def __init__(self, model, engine):
+        self.model = model
+        self.engine = engine  # Внедрение объекта Engine в класс Car
+
+    def start_car(self):
+        return f'Car model {self.model}: {self.engine.start()}'  # Использование методов объекта Engine
+
+# Создание объекта двигателя
+engine = Engine(150, 'Petrol')
+
+# Создание объекта машины с двигателем
+car = Car('Toyota', engine)
+
+# Запуск машины
+print(car.start_car())
+
+# Car model Toyota: Engine with 150 HP running on Petrol started.
+                    </code></pre>
+                    </section>
                 </section>
                 <section>
-                    <h1>Mermaid for beautiful diagrams!</h1>
-                    <div class="mermaid">
-                        <pre>
-						erDiagram
-    CUSTOMER ||--o{ ORDER : ""
-    CUSTOMER {
-        string name
-        string custNumber
-        string sector
-    }
-    ORDER ||--|{ LINE-ITEM : contains
-    ORDER {
-        int orderNumber
-        string deliveryAddress
-    }
-    LINE-ITEM {
-        string productCode
-        int quantity
-        float pricePerUnit
-    }
-    ORDER ||--|{ STUDENT : contains
-    STUDENT {
-        int orderNumber
-        string deliveryAddress
-    }
-						</pre
-                        >
-                    </div>
-                    <h4>
-                        Check documentation
-                        <a href="https://mermaid.js.org/config/usage.html">
-                            here
-                        </a>
-                        !
-                    </h4>
-                </section>
-                <section>
-                    <h1>Now supports Nerd font icons!</h1>
-                    <div>Nerdy project that adds icons to font itself</div>
-                    <h6>
-                        Checkout their site for icons like this
-                        <a href="https://www.nerdfonts.com/">󰖟</a>
-                        !
-                    </h6>
-                </section>
-                <section>
-                    <h1>Now supports automatic QRCode generation!</h1>
-                    <div>
-                        With GoQR you can just add data-type and alt attributes
-                        to your
-                        <code class="html">
-                            &lt;img alt="https://goqr.me/" data-type="qrcode" /
-                            &gt;
-                        </code>
-                        tag!
-                    </div>
-                    <img
-                        class="r-stretch"
-                        alt="https://goqr.me/"
-                        data-type="qrcode" />
-                </section>
-                <section>
-                    <h1>New changes on the way!</h1>
+                    <section>
+                        <h1>Перегрузка операторов</h1>
+                        <p>
+                            возможность определять или изменять поведение
+                            стандартных операторов (например,
+                            <code>+</code>
+                            ,
+                            <code>-</code>
+                            ,
+                            <code>*</code>
+                            ,
+                            <code>/</code>
+                            ,
+                            <code>==</code>
+                            и т.д.) для пользовательских объектов
+                        </p>
+                    </section>
+                    <section>
+                        <h1>Синтаксис методов перегрузки операторов:</h1>
+                        <ul>
+                            <li>
+                                <code class="python">__add__(self, other)</code>
+                                <span>
+                                    — перегружает оператор сложения
+                                    <code>+</code>
+                                </span>
+                            </li>
+                            <li>
+                                <code class="python">__sub__(self, other)</code>
+                                <span>
+                                    - перегружает оператор вычитания
+                                    <code>-</code>
+                                </span>
+                            </li>
+                            <li>
+                                <code class="python">__mul__(self, other)</code>
+                                <span>
+                                    - перегружает оператор умножения
+                                    <code>*</code>
+                                </span>
+                            </li>
+                            <li>
+                                <code class="python">__eq__(self, other)</code>
+                                <span>
+                                    - перегружает оператор равенства
+                                    <code>==</code>
+                                </span>
+                            </li>
+                            <li>
+                                <code class="python">__lt__(self, other)</code>
+                                <span>
+                                    - перегружает оператор «меньше»
+                                    <code>&lt;</code>
+                                </span>
+                            </li>
+                            <li>
+                                <code class="python">__gt__(self, other)</code>
+                                <span>
+                                    - перегружает оператор «больше»
+                                    <code>&gt;</code>
+                                </span>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <ul>
+                            <li>
+                                <code class="python">__ne__(self, other)</code>
+                                <span>
+                                    - перегружает оператор «неравенства»
+                                    <code>!=</code>
+                                </span>
+                            </li>
+                            <li>
+                                <code class="python">
+                                    __getitem__(self, index)
+                                </code>
+                                <span>
+                                    - перегружает оператор доступа к элементам
+                                    по индексу
+                                    <code>var[i]</code>
+                                </span>
+                            </li>
+                            <li>
+                                <code class="python">
+                                    __setitem__(self, index, value)
+                                </code>
+                                <span>
+                                    - перегружает оператор «присваивания по
+                                    индексу»
+                                    <code>var[i] = a</code>
+                                </span>
+                            </li>
+                            <li>
+                                <code class="python">__len__(self)</code>
+                                <span>
+                                    - перегружает оператор «больше»
+                                    <code>len()</code>
+                                </span>
+                            </li>
+                            <li>
+                                <code class="python">len()</code>
+                                <span>
+                                    - оператор длины
+                                    <code>&gt;</code>
+                                </span>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h1>
+                            Пример перегрузки оператора сложения
+                            <code>+</code>
+                        </h1>
+                        <pre class="r-stretch"><code class="python">
+class Vector:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __add__(self, other):
+        return Vector(self.x + other.x, self.y + other.y)
+
+    def __repr__(self):
+        return f"Vector({self.x}, {self.y})"
+
+# Создаем два вектора
+v1 = Vector(2, 4)
+v2 = Vector(3, 5)
+
+# Используем перегруженный оператор сложения
+v3 = v1 + v2
+print(v3) # Vector(5, 9)
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h1>
+                            Пример перегрузки оператора сложения
+                            <code>+</code>
+                        </h1>
+                        <pre class="r-stretch"><code class="python">
+class Matrix:
+    def __init__(self, values):
+        self.values = values
+
+    def __mul__(self, other):
+        result = [
+            [self.values[i][j] * other for j in range(len(self.values[0]))]
+            for i in range(len(self.values))
+        ]
+        return Matrix(result)
+
+    def __repr__(self):
+        return f"Matrix({self.values})"
+
+# Создание матрицы
+m = Matrix([[1, 2], [3, 4]])
+
+# Умножение матрицы на скаляр
+m2 = m * 2
+print(m2) # Matrix([[2, 4], [6, 8]])
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h1>
+                            Пример перегрузки оператора сложения
+                            <code>+</code>
+                        </h1>
+                        <pre class="r-stretch"><code class="python">
+class MyList:
+    def __init__(self, items):
+        self.items = items
+
+    def __getitem__(self, index):
+        return self.items[index]
+
+lst = MyList([1, 2, 3])
+print(lst[1])  # 2
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h1></h1>
+                    </section>
                 </section>
             </div>
         </div>
@@ -396,4 +511,3 @@ var foo = {
         </script>
     </body>
 </html>
-
